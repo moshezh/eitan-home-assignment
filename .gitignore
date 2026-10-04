@@ -1,0 +1,11 @@
+.build/
+
+# terraform: state can hold secrets, never commit it. .terraform.lock.hcl IS committed.
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+**/.generated/
+
+*.kubeconfig
+.env

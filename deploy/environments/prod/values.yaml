@@ -1,0 +1,18 @@
+# 3 replicas minimum, so losing a node or a pod mid-rollout still leaves 2
+env:
+  PODINFO_UI_MESSAGE: "podinfo - prod"
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 64Mi
+  limits:
+    memory: 128Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 10
+
+ingress:
+  host: podinfo.localtest.me

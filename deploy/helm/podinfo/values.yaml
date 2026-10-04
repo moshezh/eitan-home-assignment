@@ -1,0 +1,32 @@
+# Shared defaults. Per-env overrides are in deploy/environments/<env>/values.yaml
+
+image:
+  repository: localhost:5001/dev/podinfo   # set by the pipeline per env
+  digest: ""
+  tag: ""
+
+env:
+  PODINFO_UI_MESSAGE: "hello-platform"
+  PODINFO_LEVEL: info
+
+replicaCount: 2   # only used when autoscaling is off
+
+# No CPU limit. Memory limit yes.
+resources:
+  requests:
+    cpu: 50m
+    memory: 32Mi
+  limits:
+    memory: 128Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 6
+  cpuPercent: 70
+
+pdb:
+  enabled: true
+
+ingress:
+  host: podinfo.localtest.me #default, but each env sets its own

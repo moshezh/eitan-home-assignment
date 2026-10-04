@@ -1,0 +1,6 @@
+apiVersion: v2
+name: podinfo
+description: Our chart for podinfo (instead of the upstream one, which has no securityContext or NetworkPolicy)
+type: application
+version: 0.1.0
+appVersion: "6.15.0"

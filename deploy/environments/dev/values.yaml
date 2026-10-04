@@ -1,0 +1,14 @@
+env:
+  PODINFO_UI_MESSAGE: "podinfo - dev"
+  PODINFO_LEVEL: debug
+
+autoscaling:
+  enabled: false
+replicaCount: 1
+
+# a PDB on a single replica would block node drains
+pdb:
+  enabled: false
+
+ingress:
+  host: dev.podinfo.localtest.me
