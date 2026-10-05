@@ -1,3 +1,3 @@
   # Accepted CVEs in the upstream image
-  # podinfo is a Go binary and uses Go's crypto/tls, not OpenSSL, and runs no QUIC server.
   CVE-2026-14456 exp:2026-11-30
+    
